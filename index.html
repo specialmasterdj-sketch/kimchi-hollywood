@@ -60,6 +60,10 @@
   .nav-links{display:flex;gap:18px;font-weight:600;font-size:.92em}
   .nav-links a{color:#374151;transition:color .15s}
   .nav-links a:hover{color:var(--green)}
+  .nav-social{display:flex;gap:8px;align-items:center;font-size:1.15em}
+  .nav-social a{transition:transform .15s;line-height:1}
+  .nav-social a:hover{transform:scale(1.2)}
+  @media(max-width:520px){ .nav-social{display:none} }
   .lang{display:flex;gap:4px}
   .lang button{border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:4px 9px;font-size:.78em;font-weight:700;color:#6b7280;cursor:pointer;transition:all .15s}
   .lang button.on{background:var(--green);color:#fff;border-color:var(--green)}
@@ -183,6 +187,11 @@
       <a href="#rewards" data-t="nav_rewards">Rewards</a>
       <a href="#visit" data-t="nav_visit">Visit</a>
     </nav>
+    <div class="nav-social">
+      <a href="https://instagram.com/kimchimartmiami" target="_blank" rel="noopener" title="Instagram">📷</a>
+      <a href="https://youtube.com/@kimchimarttv" target="_blank" rel="noopener" title="YouTube">▶️</a>
+      <a href="https://www.facebook.com/miamikimchi" target="_blank" rel="noopener" title="Facebook">📘</a>
+    </div>
     <div class="lang">
       <button onclick="setLang('en')" id="lng-en" class="on">EN</button>
       <button onclick="setLang('es')" id="lng-es">ES</button>
@@ -396,6 +405,7 @@
   <div class="social">
     <a href="https://instagram.com/kimchimartmiami" target="_blank" rel="noopener"><span class="ic">📷</span> Instagram</a>
     <a href="https://youtube.com/@kimchimarttv" target="_blank" rel="noopener"><span class="ic">▶️</span> YouTube</a>
+    <a href="https://www.facebook.com/miamikimchi" target="_blank" rel="noopener"><span class="ic">📘</span> Facebook</a>
   </div>
   <div class="copy">© <span id="yr"></span> Kimchi Mart Hollywood. All rights reserved.</div>
 </footer>
