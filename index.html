@@ -133,6 +133,21 @@
   .gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,61,38,.85));color:#fff;font-weight:700;font-size:.95em;padding:18px 14px 12px}
   @media(max-width:760px){ .gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))} }
 
+  /* 🔥 WEEKLY PRODUCTS (price locked) */
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+  .prod{background:#fff;border:1px solid #f0ede3;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.05);position:relative;transition:transform .18s}
+  .prod:hover{transform:translateY(-3px)}
+  .prod .badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--red);color:#fff;font-size:.7em;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.02em}
+  .prod .pic{aspect-ratio:1/1;background:linear-gradient(135deg,#fef9c3,#fff7ed);display:flex;align-items:center;justify-content:center;font-size:3.4em;overflow:hidden}
+  .prod .pic img{width:100%;height:100%;object-fit:cover}
+  .prod .body{padding:12px 12px 14px}
+  .prod .brand{font-size:.7em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.03em}
+  .prod .nm{font-weight:700;font-size:.92em;color:var(--ink);line-height:1.3;margin-top:2px;min-height:2.4em}
+  .prod .price-lock{display:flex;align-items:center;gap:6px;margin-top:8px;background:#f0fdf4;border:1px dashed var(--green);border-radius:8px;padding:6px 10px;font-size:.82em;font-weight:800;color:var(--green);cursor:pointer}
+  .prod .price-lock:hover{background:#dcfce7}
+  .prod-cta{text-align:center}
+  @media(max-width:760px){ .prod-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))} .prod .pic{font-size:2.6em} }
+
   /* MEMBERSHIP / REWARDS */
   .rewards{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;border-radius:22px;padding:34px 26px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;box-shadow:0 12px 36px rgba(15,61,38,.25)}
   .rewards h3{font-size:1.7em;font-weight:900;margin-bottom:6px}
@@ -184,6 +199,7 @@
       <a href="#about" data-t="nav_about">About</a>
       <a href="#hours" data-t="nav_hours">Hours</a>
       <a href="#depts" data-t="nav_depts">Departments</a>
+      <a href="#products" data-t="nav_products">Deals</a>
       <a href="#gallery" data-t="nav_gallery">Gallery</a>
       <a href="#rewards" data-t="nav_rewards">Rewards</a>
       <a href="#visit" data-t="nav_visit">Visit</a>
@@ -301,6 +317,77 @@
       <div class="dept"><div class="ic">🍣</div><div class="nm" data-t="d_sushi">Sushi Bar</div><div class="ds" data-t="d_sushi_d">Fresh made daily</div></div>
       <div class="dept"><div class="ic">🧋</div><div class="nm" data-t="d_boba">Boba Tea</div><div class="ds" data-t="d_boba_d">Bubble tea counter</div></div>
       <div class="dept"><div class="ic">🥐</div><div class="nm" data-t="d_bakery">Bakery</div><div class="ds" data-t="d_bakery_d">Fresh baked goods</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEEKLY PRODUCTS (price locked) ============ -->
+<section id="products" style="background:linear-gradient(180deg,#fffbeb,#fdfbf5)">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🔥</div>
+      <h2 data-t="prod_h">This Week's Favorites</h2>
+      <p data-t="prod_sub">Members-only prices · Join free to unlock</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod">
+        <span class="badge" data-t="prod_hot">HOT</span>
+        <div class="pic">🍜</div>
+        <div class="body">
+          <div class="brand">Samyang</div>
+          <div class="nm" data-t="p_buldak">Buldak Hot Chicken Ramen</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock">Members price</span></div>
+        </div>
+      </div>
+      <div class="prod">
+        <span class="badge" data-t="prod_sale">SALE</span>
+        <div class="pic">🍲</div>
+        <div class="body">
+          <div class="brand">Nongshim</div>
+          <div class="nm" data-t="p_shin">Shin Ramyun Family Pack</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock2">Members price</span></div>
+        </div>
+      </div>
+      <div class="prod">
+        <span class="badge" data-t="prod_sale_b">SALE</span>
+        <div class="pic">🍝</div>
+        <div class="body">
+          <div class="brand">Nongshim</div>
+          <div class="nm" data-t="p_chapa">Chapagetti Noodles</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock3">Members price</span></div>
+        </div>
+      </div>
+      <div class="prod">
+        <span class="badge" data-t="prod_new">NEW</span>
+        <div class="pic">🧋</div>
+        <div class="body">
+          <div class="brand">Kimchi Mart</div>
+          <div class="nm" data-t="p_boba">Fresh Boba Milk Tea</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock4">Members price</span></div>
+        </div>
+      </div>
+      <div class="prod">
+        <span class="badge" data-t="prod_hot_b">HOT</span>
+        <div class="pic">🍣</div>
+        <div class="body">
+          <div class="brand">Kimchi Mart</div>
+          <div class="nm" data-t="p_sushi">Fresh Made Sushi</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock5">Members price</span></div>
+        </div>
+      </div>
+      <div class="prod">
+        <span class="badge" data-t="prod_sale_c">SALE</span>
+        <div class="pic">🥬</div>
+        <div class="body">
+          <div class="brand">Fresh Daily</div>
+          <div class="nm" data-t="p_kimchi">House-Made Kimchi</div>
+          <div class="price-lock" onclick="goJoin()">🔒 <span data-t="prod_lock6">Members price</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="prod-cta">
+      <a class="btn btn-gold" href="https://specialmasterdj-sketch.github.io/kimchi-rewards/login.html" target="_blank" rel="noopener" data-t="prod_unlock">💎 See Prices — Join Free</a>
+      <p style="margin-top:10px;color:#92400e;font-size:.85em;font-weight:600" data-t="prod_note">Prices & weekly deals are exclusive to members 🔒</p>
     </div>
   </div>
 </section>
@@ -441,6 +528,29 @@ const T = {
   rw_join:{en:'Join Now →',es:'Únete Ahora →',ko:'가입하기 →'},
   rw_members:{en:'🎉 Join 57,000+ members',es:'🎉 Únete a 57,000+ miembros',ko:'🎉 5만 7천명이 가입했어요'},
 
+  prod_h:{en:"This Week's Favorites",es:'Favoritos de la Semana',ko:'이번 주 인기 상품'},
+  prod_sub:{en:'Members-only prices · Join free to unlock',es:'Precios solo para miembros · Únete gratis',ko:'가격은 회원 전용 · 무료 가입하고 확인'},
+  prod_hot:{en:'HOT',es:'HOT',ko:'인기'},
+  prod_hot_b:{en:'HOT',es:'HOT',ko:'인기'},
+  prod_sale:{en:'SALE',es:'OFERTA',ko:'세일'},
+  prod_sale_b:{en:'SALE',es:'OFERTA',ko:'세일'},
+  prod_sale_c:{en:'SALE',es:'OFERTA',ko:'세일'},
+  prod_new:{en:'NEW',es:'NUEVO',ko:'신상'},
+  p_buldak:{en:'Buldak Hot Chicken Ramen',es:'Ramen Buldak Picante',ko:'불닭볶음면'},
+  p_shin:{en:'Shin Ramyun Family Pack',es:'Shin Ramyun Pack Familiar',ko:'신라면 멀티팩'},
+  p_chapa:{en:'Chapagetti Noodles',es:'Fideos Chapagetti',ko:'짜파게티'},
+  p_boba:{en:'Fresh Boba Milk Tea',es:'Té de Boba Fresco',ko:'생 버블티'},
+  p_sushi:{en:'Fresh Made Sushi',es:'Sushi Recién Hecho',ko:'즉석 스시'},
+  p_kimchi:{en:'House-Made Kimchi',es:'Kimchi Casero',ko:'매장 직접 담근 김치'},
+  prod_lock:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_lock2:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_lock3:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_lock4:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_lock5:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_lock6:{en:'Members price',es:'Precio socios',ko:'회원가'},
+  prod_unlock:{en:'💎 See Prices — Join Free',es:'💎 Ver Precios — Únete Gratis',ko:'💎 가격 보기 — 무료 가입'},
+  prod_note:{en:'Prices & weekly deals are exclusive to members 🔒',es:'Precios y ofertas semanales exclusivos para miembros 🔒',ko:'가격·주간 세일은 회원 전용입니다 🔒'},
+  nav_products:{en:'Deals',es:'Ofertas',ko:'인기상품'},
   gallery_h:{en:'Inside Our Store',es:'Dentro de Nuestra Tienda',ko:'매장 둘러보기'},
   gallery_sub:{en:'Take a look around Kimchi Mart Hollywood',es:'Un vistazo a Kimchi Mart Hollywood',ko:'김치마트 헐리우드 매장을 둘러보세요'},
   gal_store:{en:'🏪 Kimchi Mart Hollywood',es:'🏪 Kimchi Mart Hollywood',ko:'🏪 김치마트 헐리우드'},
@@ -516,6 +626,9 @@ const T = {
   foot_slogan:{en:'Safe · Clean · Fresh · Trusted Asian Food',es:'Comida Asiática Segura · Limpia · Fresca · Confiable',ko:'안전 · 청결 · 신선 · 믿을 수 있는 아시아 식품'},
   foot_follow:{en:'Follow us for deals & K-food fun!',es:'¡Síguenos para ofertas y comida coreana!',ko:'세일·K푸드 소식, 팔로우하세요!'},
 };
+
+// 🔒 가격 자물쇠 클릭 → 리워드 앱 가입 화면 (회원만 가격 공개)
+function goJoin(){ window.open('https://specialmasterdj-sketch.github.io/kimchi-rewards/login.html','_blank','noopener'); }
 
 let LANG = localStorage.getItem('km_site_lang') || 'en';
 function setLang(l){
