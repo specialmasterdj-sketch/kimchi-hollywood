@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kimchi Mart Hollywood — Korean & Asian Grocery</title>
+<meta name="description" content="Kimchi Mart Hollywood — your trusted Korean & Asian grocery store in Hollywood, FL. Fresh produce, K-food, banchan, meat, seafood and more.">
+
+<!-- ============ Open Graph (카톡/페북 공유 시 미리보기) ============ -->
+<meta property="og:title" content="Kimchi Mart Hollywood — Korean & Asian Grocery">
+<meta property="og:description" content="Fresh Korean & Asian groceries in Hollywood, FL. Safe · Clean · Fresh · Trusted.">
+<meta property="og:type" content="business.business">
+<meta property="og:image" content="assets/logo-color.png">
+
+<!-- ============ Google 검색용 구조화 데이터 (지역 비즈니스) ============ -->
+<!-- ⚠️ 전무님: 아래 주소/전화/영업시간을 실제 값으로 바꿔주세요 (검색 노출에 중요) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GroceryStore",
+  "name": "Kimchi Mart Hollywood",
+  "image": "assets/logo-color.png",
+  "description": "Korean & Asian grocery store in Hollywood, FL.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2420 N Dixie Hwy",
+    "addressLocality": "Hollywood",
+    "addressRegion": "FL",
+    "postalCode": "33020",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-754-210-7965",
+  "openingHours": "Mo-Su 08:00-22:00",
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "1713"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --green:#1a5c3a; --green-d:#0f3d26; --green-l:#2e7d4f;
+    --red:#d32f2f; --gold:#f5b301; --cream:#fdfbf5; --ink:#1f2937;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI','Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* ============ HEADER ============ */
+  header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+  .nav{display:flex;align-items:center;gap:14px;padding:10px 20px;max-width:1100px;margin:0 auto}
+  .nav .logo{height:38px}
+  .nav .sp{flex:1}
+  .nav-links{display:flex;gap:18px;font-weight:600;font-size:.92em}
+  .nav-links a{color:#374151;transition:color .15s}
+  .nav-links a:hover{color:var(--green)}
+  .lang{display:flex;gap:4px}
+  .lang button{border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:4px 9px;font-size:.78em;font-weight:700;color:#6b7280;cursor:pointer;transition:all .15s}
+  .lang button.on{background:var(--green);color:#fff;border-color:var(--green)}
+  .menu-btn{display:none;background:none;border:0;font-size:1.5em;cursor:pointer;color:var(--green)}
+  @media(max-width:760px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:10px 20px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+    .nav-links.show{display:flex}
+    .menu-btn{display:block}
+  }
+
+  /* ============ HERO ============ */
+  .hero{position:relative;background:linear-gradient(135deg,var(--green-d),var(--green) 60%,var(--green-l));color:#fff;text-align:center;padding:70px 20px 80px;overflow:hidden}
+  /* 실제 매장 사진 배경 + 어두운 오버레이(글씨 가독성) */
+  .hero::after{content:'';position:absolute;inset:0;background:url('assets/photos/hero.jpg') center/cover no-repeat;opacity:.32;z-index:0;pointer-events:none}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(245,179,1,.16),transparent 50%),radial-gradient(circle at 80% 80%,rgba(211,47,47,.14),transparent 45%),linear-gradient(180deg,rgba(15,61,38,.55),rgba(15,61,38,.75));pointer-events:none;z-index:1}
+  .hero > *{position:relative;z-index:2}
+  .hero-logo{height:74px;margin:0 auto 18px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+  .hero h1{font-size:2.5em;font-weight:900;letter-spacing:-.02em;margin-bottom:10px;position:relative}
+  .hero .tag{font-size:1.15em;opacity:.95;margin-bottom:8px;position:relative}
+  .hero .gstars{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 18px;font-size:.95em;margin-top:16px;position:relative;backdrop-filter:blur(4px)}
+  .hero .gstars b{color:var(--gold)}
+  .hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 26px;position:relative}
+  .hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 16px;font-size:.85em;font-weight:600;backdrop-filter:blur(4px)}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:13px 24px;font-weight:800;font-size:1em;cursor:pointer;border:0;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:#3a2c00;box-shadow:0 6px 18px rgba(245,179,1,.4)}
+  .btn-out{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  @media(max-width:760px){ .hero h1{font-size:1.8em} }
+
+  /* ============ SECTIONS ============ */
+  section{padding:56px 0}
+  .sec-h{text-align:center;margin-bottom:34px}
+  .sec-h .ic{font-size:2em}
+  .sec-h h2{font-size:1.8em;font-weight:900;color:var(--green-d);margin-top:4px}
+  .sec-h p{color:#6b7280;margin-top:6px}
+
+  /* INFO CARDS */
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .info-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 4px 16px rgba(0,0,0,.05);border:1px solid #f0ede3;text-align:center}
+  .info-card .ic{font-size:2.1em;margin-bottom:10px}
+  .info-card h3{font-size:1.05em;font-weight:800;color:var(--green-d);margin-bottom:6px}
+  .info-card p{color:#4b5563;font-size:.95em}
+  .info-card .edit{color:var(--red);font-weight:700;font-size:.82em;background:#fef2f2;border-radius:6px;padding:2px 8px;display:inline-block;margin-top:6px}
+
+  /* HOURS TABLE */
+  .hours{max-width:420px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05);border:1px solid #f0ede3}
+  .hours .row{display:flex;justify-content:space-between;padding:11px 20px;border-bottom:1px solid #f3f4f6;font-size:.95em}
+  .hours .row:last-child{border-bottom:0}
+  .hours .row.today{background:#f0fdf4;font-weight:800;color:var(--green-d)}
+  .hours .day{font-weight:600}
+
+  /* DEPARTMENTS */
+  .dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .dept{background:#fff;border-radius:14px;padding:20px 14px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.05);border:1px solid #f0ede3;transition:transform .15s}
+  .dept:hover{transform:translateY(-3px)}
+  .dept .ic{font-size:2.3em}
+  .dept .nm{font-weight:800;color:var(--green-d);margin-top:8px;font-size:.98em}
+  .dept .ds{color:#6b7280;font-size:.82em;margin-top:3px}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .gallery figure{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.1);aspect-ratio:4/3}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+  .gallery figure:hover img{transform:scale(1.06)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,61,38,.85));color:#fff;font-weight:700;font-size:.95em;padding:18px 14px 12px}
+  @media(max-width:760px){ .gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))} }
+
+  /* MEMBERSHIP / REWARDS */
+  .rewards{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;border-radius:22px;padding:34px 26px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;box-shadow:0 12px 36px rgba(15,61,38,.25)}
+  .rewards h3{font-size:1.7em;font-weight:900;margin-bottom:6px}
+  .rewards .sub{opacity:.9;margin-bottom:18px}
+  .tier-cards{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .tier{flex:1;min-width:130px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:16px;text-align:center}
+  .tier.k1{border-color:var(--gold)}
+  .tier.k2{border-color:#7dd3fc}
+  .tier .tag{font-size:1.5em;font-weight:900}
+  .tier.k1 .tag{color:var(--gold)}
+  .tier.k2 .tag{color:#7dd3fc}
+  .tier .off{font-size:2.1em;font-weight:900;margin:4px 0}
+  .tier .lbl{font-size:.82em;opacity:.9}
+  .perks{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:.92em}
+  .perks li{display:flex;align-items:center;gap:8px}
+  .qr-box{background:#fff;border-radius:18px;padding:18px;text-align:center;color:var(--ink)}
+  .qr-box img{width:170px;height:170px;margin:0 auto 10px;border-radius:8px}
+  .qr-box .qt{font-weight:800;color:var(--green-d);font-size:.95em}
+  .qr-box .qs{font-size:.8em;color:#6b7280;margin-top:3px}
+  .qr-box .members{margin-top:10px;font-size:.82em;font-weight:700;color:var(--green)}
+  @media(max-width:760px){ .rewards{grid-template-columns:1fr;text-align:center} .perks li{justify-content:center} }
+
+  /* MAP / CTA */
+  .map-box{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #f0ede3}
+  .map-ph{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--green-d);text-align:center;padding:20px}
+  .map-ph .ic{font-size:3em;margin-bottom:10px}
+
+  /* FOOTER */
+  footer{background:var(--green-d);color:#d1fae5;text-align:center;padding:40px 20px}
+  footer .flogo{height:40px;margin:0 auto 14px;filter:brightness(0) invert(1)}
+  footer .follow-h{font-weight:800;color:#fff;font-size:1.05em;margin-top:18px}
+  footer .social{display:flex;gap:12px;justify-content:center;margin:12px 0 4px;flex-wrap:wrap}
+  footer .social a{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 18px;font-size:.92em;font-weight:700;color:#fff;transition:transform .15s,background .15s}
+  footer .social a:hover{transform:translateY(-2px);background:rgba(255,255,255,.22)}
+  footer .social a .ic{font-size:1.2em}
+  footer .copy{font-size:.82em;opacity:.7;margin-top:10px}
+
+  .edit-note{background:#fffbeb;border:1px dashed var(--gold);border-radius:6px;color:#92400e;font-weight:600;font-size:.85em;padding:1px 7px;display:inline-block}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <img class="logo" src="assets/logo.png" alt="Kimchi Mart">
+    <div class="sp"></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-t="nav_about">About</a>
+      <a href="#hours" data-t="nav_hours">Hours</a>
+      <a href="#depts" data-t="nav_depts">Departments</a>
+      <a href="#gallery" data-t="nav_gallery">Gallery</a>
+      <a href="#rewards" data-t="nav_rewards">Rewards</a>
+      <a href="#visit" data-t="nav_visit">Visit</a>
+    </nav>
+    <div class="lang">
+      <button onclick="setLang('en')" id="lng-en" class="on">EN</button>
+      <button onclick="setLang('es')" id="lng-es">ES</button>
+      <button onclick="setLang('ko')" id="lng-ko">KO</button>
+    </div>
+    <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding-top:70px">
+  <img class="hero-logo" src="assets/logo.png" alt="Kimchi Mart Hollywood">
+  <h1 data-t="hero_title">Kimchi Mart Hollywood</h1>
+  <p class="tag" data-t="hero_tag">Your Trusted Korean & Asian Grocery</p>
+  <a class="gstars" href="https://www.google.com/search?q=Kimchi+Mart+Hollywood+FL" target="_blank" rel="noopener" title="Google Reviews">
+    ⭐⭐⭐⭐⭐ <b>4.8</b> · <span data-t="greviews">1,713 Google reviews</span>
+  </a>
+  <div class="badges">
+    <span class="badge" data-t="badge_safe">✅ Safe</span>
+    <span class="badge" data-t="badge_clean">✨ Clean</span>
+    <span class="badge" data-t="badge_fresh">🥬 Fresh</span>
+    <span class="badge" data-t="badge_trusted">🤝 Trusted</span>
+  </div>
+  <div class="hero-cta">
+    <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=2420+N+Dixie+Hwy+Hollywood+FL+33020" target="_blank" rel="noopener" data-t="cta_directions">📍 Get Directions</a>
+    <a class="btn btn-out" href="tel:+17542107965" id="callBtn" data-t="cta_call">☎ (754) 210-7965</a>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🏪</div>
+      <h2 data-t="about_h">Welcome to Kimchi Mart</h2>
+      <p data-t="about_sub">Hollywood, Florida</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="ic">📍</div>
+        <h3 data-t="ic_addr">Address</h3>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=2420+N+Dixie+Hwy+Hollywood+FL+33020" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">2420 N Dixie Hwy<br>Hollywood, FL 33020</a></p>
+      </div>
+      <div class="info-card">
+        <div class="ic">☎</div>
+        <h3 data-t="ic_phone">Phone</h3>
+        <p><a href="tel:+17542107965" style="color:var(--green);font-weight:700">(754) 210-7965</a></p>
+      </div>
+      <div class="info-card">
+        <div class="ic">🅿️</div>
+        <h3 data-t="ic_parking">Free Parking</h3>
+        <p data-t="ic_parking_d">On-site parking available</p>
+      </div>
+      <div class="info-card">
+        <div class="ic">💳</div>
+        <h3 data-t="ic_snap">SNAP / EBT</h3>
+        <p data-t="ic_snap_d">EBT cards accepted</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section id="hours" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🕐</div>
+      <h2 data-t="hours_h">Store Hours</h2>
+      <p data-t="hours_sub">Open 7 days a week</p>
+    </div>
+    <div class="hours" id="hoursTable">
+      <div class="row" data-day="1"><span class="day" data-t="mon">Monday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="2"><span class="day" data-t="tue">Tuesday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="3"><span class="day" data-t="wed">Wednesday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="4"><span class="day" data-t="thu">Thursday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="5"><span class="day" data-t="fri">Friday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="6"><span class="day" data-t="sat">Saturday</span><span>8:00 AM – 10:00 PM</span></div>
+      <div class="row" data-day="0"><span class="day" data-t="sun">Sunday</span><span>8:00 AM – 10:00 PM</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPARTMENTS ============ -->
+<section id="depts">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🧺</div>
+      <h2 data-t="depts_h">What We Offer</h2>
+      <p data-t="depts_sub">Everything for your Korean & Asian kitchen</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept"><div class="ic">🥬</div><div class="nm" data-t="d_produce">Fresh Produce</div><div class="ds" data-t="d_produce_d">Vegetables & fruits</div></div>
+      <div class="dept"><div class="ic">🥩</div><div class="nm" data-t="d_meat">Meat</div><div class="ds" data-t="d_meat_d">BBQ cuts & more</div></div>
+      <div class="dept"><div class="ic">🐟</div><div class="nm" data-t="d_seafood">Seafood</div><div class="ds" data-t="d_seafood_d">Fresh & frozen</div></div>
+      <div class="dept"><div class="ic">🥢</div><div class="nm" data-t="d_banchan">Banchan</div><div class="ds" data-t="d_banchan_d">Korean side dishes</div></div>
+      <div class="dept"><div class="ic">🍜</div><div class="nm" data-t="d_noodle">Ramen & Noodles</div><div class="ds" data-t="d_noodle_d">All your favorites</div></div>
+      <div class="dept"><div class="ic">🍱</div><div class="nm" data-t="d_kfood">K-Food</div><div class="ds" data-t="d_kfood_d">Snacks & frozen meals</div></div>
+      <div class="dept"><div class="ic">🍶</div><div class="nm" data-t="d_sauce">Sauces & Pastes</div><div class="ds" data-t="d_sauce_d">Gochujang, soy & more</div></div>
+      <div class="dept"><div class="ic">🍵</div><div class="nm" data-t="d_drinks">Drinks & Tea</div><div class="ds" data-t="d_drinks_d">Beverages</div></div>
+      <div class="dept"><div class="ic">🍣</div><div class="nm" data-t="d_sushi">Sushi Bar</div><div class="ds" data-t="d_sushi_d">Fresh made daily</div></div>
+      <div class="dept"><div class="ic">🧋</div><div class="nm" data-t="d_boba">Boba Tea</div><div class="ds" data-t="d_boba_d">Bubble tea counter</div></div>
+      <div class="dept"><div class="ic">🥐</div><div class="nm" data-t="d_bakery">Bakery</div><div class="ds" data-t="d_bakery_d">Fresh baked goods</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">📸</div>
+      <h2 data-t="gallery_h">Inside Our Store</h2>
+      <p data-t="gallery_sub">Take a look around Kimchi Mart Hollywood</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/photos/storefront.jpg" alt="Kimchi Mart Hollywood storefront" loading="lazy"><figcaption data-t="gal_store">🏪 Kimchi Mart Hollywood</figcaption></figure>
+      <figure><img src="assets/photos/g1-kimchi.jpg" alt="Korean Kimchi section" loading="lazy"><figcaption data-t="gal_kimchi">🥬 Korean Kimchi & Banchan</figcaption></figure>
+      <figure><img src="assets/photos/g2-produce.jpg" alt="Fresh produce" loading="lazy"><figcaption data-t="gal_produce">🍎 Fresh Produce</figcaption></figure>
+      <figure><img src="assets/photos/g4-meat.jpg" alt="Fresh meat section" loading="lazy"><figcaption data-t="gal_meat">🥩 Fresh Meat & More</figcaption></figure>
+      <figure><img src="assets/photos/g3-aisle.jpg" alt="Store aisle" loading="lazy"><figcaption data-t="gal_aisle">🛒 Spacious & Clean Aisles</figcaption></figure>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Kimchi+Mart+Hollywood+FL" target="_blank" rel="noopener" data-t="gal_more">📷 See more photos on Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP / REWARDS APP ============ -->
+<section id="rewards">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">💎</div>
+      <h2 data-t="rw_h">Kimchi Mart Rewards</h2>
+      <p data-t="rw_sub">Join free · Save on every visit</p>
+    </div>
+    <div class="rewards">
+      <div>
+        <div class="tier-cards">
+          <div class="tier k1">
+            <div class="tag">K1</div>
+            <div class="off">5%</div>
+            <div class="lbl" data-t="rw_k1">off every purchase</div>
+          </div>
+          <div class="tier k2">
+            <div class="tag">K2</div>
+            <div class="off">10%</div>
+            <div class="lbl" data-t="rw_k2">off every purchase</div>
+          </div>
+        </div>
+        <ul class="perks">
+          <li>⭐ <span data-t="rw_p1">Earn points on every purchase</span></li>
+          <li>🎂 <span data-t="rw_p2">Birthday bonus rewards</span></li>
+          <li>⚡ <span data-t="rw_p3">Early access to weekly deals</span></li>
+          <li>🎁 <span data-t="rw_p4">Refer friends & earn more</span></li>
+          <li>🔔 <span data-t="rw_p5">Alerts on expiring-item specials</span></li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <img src="assets/app-qr.png" alt="Scan to join Kimchi Mart Rewards">
+        <div class="qt" data-t="rw_qt">📱 Scan to Join</div>
+        <div class="qs" data-t="rw_qs">Open your phone camera & scan</div>
+        <a class="btn btn-gold" style="margin-top:12px;padding:10px 20px;font-size:.9em" href="https://specialmasterdj-sketch.github.io/kimchi-rewards/login.html" target="_blank" rel="noopener" data-t="rw_join">Join Now →</a>
+        <div class="members" data-t="rw_members">🎉 Join 57,000+ members</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" style="background:linear-gradient(135deg,#fef9c3,#fff7ed);text-align:center">
+  <div class="wrap">
+    <div style="font-size:2.6em;letter-spacing:2px">⭐⭐⭐⭐⭐</div>
+    <div style="font-size:2.4em;font-weight:900;color:var(--green-d);margin:6px 0">4.8 / 5.0</div>
+    <h2 style="font-size:1.5em;font-weight:800;color:#92400e" data-t="rev_h">What Our Customers Say</h2>
+    <p style="color:#a16207;margin:8px 0 20px;font-weight:600" data-t="rev_sub">Rated 4.8 ★ by 1,713 customers on Google</p>
+    <a class="btn btn-gold" href="https://www.google.com/search?q=Kimchi+Mart+Hollywood+FL+reviews" target="_blank" rel="noopener" data-t="rev_btn">⭐ Read Google Reviews</a>
+  </div>
+</section>
+
+<!-- ============ VISIT / MAP ============ -->
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🗺️</div>
+      <h2 data-t="visit_h">Visit Us</h2>
+      <p data-t="visit_sub">We can't wait to see you!</p>
+    </div>
+    <div style="text-align:center;margin-bottom:18px;color:#4b5563">
+      📍 <b>2420 N Dixie Hwy, Hollywood, FL 33020</b>
+      &nbsp;·&nbsp; ☎ <a href="tel:+17542107965" style="color:var(--green);font-weight:700">(754) 210-7965</a>
+    </div>
+    <div class="map-box">
+      <iframe
+        title="Kimchi Mart Hollywood Map"
+        src="https://www.google.com/maps?q=2420+N+Dixie+Hwy,+Hollywood,+FL+33020&output=embed"
+        width="100%" height="340" style="border:0;display:block" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="text-align:center;margin-top:18px">
+      <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=2420+N+Dixie+Hwy+Hollywood+FL+33020" target="_blank" rel="noopener" data-t="map_open">🧭 Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <img class="flogo" src="assets/logo.png" alt="Kimchi Mart">
+  <div style="font-weight:800;font-size:1.1em;color:#fff" data-t="foot_name">Kimchi Mart Hollywood</div>
+  <div data-t="foot_slogan" style="margin-top:4px">Safe · Clean · Fresh · Trusted Asian Food</div>
+  <div class="follow-h" data-t="foot_follow">Follow us for deals & K-food fun!</div>
+  <div class="social">
+    <a href="https://instagram.com/kimchimartmiami" target="_blank" rel="noopener"><span class="ic">📷</span> Instagram</a>
+    <a href="https://youtube.com/@kimchimarttv" target="_blank" rel="noopener"><span class="ic">▶️</span> YouTube</a>
+  </div>
+  <div class="copy">© <span id="yr"></span> Kimchi Mart Hollywood. All rights reserved.</div>
+</footer>
+
+<script>
+// ============ 다국어 (EN / ES / KO) ============
+const T = {
+  nav_about:{en:'About',es:'Nosotros',ko:'소개'},
+  nav_hours:{en:'Hours',es:'Horario',ko:'영업시간'},
+  nav_depts:{en:'Departments',es:'Secciones',ko:'매장 안내'},
+  nav_gallery:{en:'Gallery',es:'Galería',ko:'매장 사진'},
+  nav_rewards:{en:'Rewards',es:'Recompensas',ko:'멤버십'},
+  nav_visit:{en:'Visit',es:'Visítanos',ko:'오시는 길'},
+
+  rw_h:{en:'Kimchi Mart Rewards',es:'Recompensas Kimchi Mart',ko:'김치마트 멤버십'},
+  rw_sub:{en:'Join free · Save on every visit',es:'Únete gratis · Ahorra en cada visita',ko:'무료 가입 · 올 때마다 할인'},
+  rw_k1:{en:'off every purchase',es:'en cada compra',ko:'전 품목 할인'},
+  rw_k2:{en:'off every purchase',es:'en cada compra',ko:'전 품목 할인'},
+  rw_p1:{en:'Earn points on every purchase',es:'Gana puntos en cada compra',ko:'구매할 때마다 포인트 적립'},
+  rw_p2:{en:'Birthday bonus rewards',es:'Recompensas de cumpleaños',ko:'생일 보너스 적립'},
+  rw_p3:{en:'Early access to weekly deals',es:'Acceso anticipado a ofertas',ko:'주간 세일 미리보기'},
+  rw_p4:{en:'Refer friends & earn more',es:'Refiere amigos y gana más',ko:'친구 추천하고 추가 적립'},
+  rw_p5:{en:'Alerts on expiring-item specials',es:'Alertas de ofertas especiales',ko:'임박 특가 알림'},
+  rw_qt:{en:'📱 Scan to Join',es:'📱 Escanea para Unirte',ko:'📱 스캔하고 가입'},
+  rw_qs:{en:'Open your phone camera & scan',es:'Abre la cámara de tu teléfono y escanea',ko:'폰 카메라로 스캔하세요'},
+  rw_join:{en:'Join Now →',es:'Únete Ahora →',ko:'가입하기 →'},
+  rw_members:{en:'🎉 Join 57,000+ members',es:'🎉 Únete a 57,000+ miembros',ko:'🎉 5만 7천명이 가입했어요'},
+
+  gallery_h:{en:'Inside Our Store',es:'Dentro de Nuestra Tienda',ko:'매장 둘러보기'},
+  gallery_sub:{en:'Take a look around Kimchi Mart Hollywood',es:'Un vistazo a Kimchi Mart Hollywood',ko:'김치마트 헐리우드 매장을 둘러보세요'},
+  gal_store:{en:'🏪 Kimchi Mart Hollywood',es:'🏪 Kimchi Mart Hollywood',ko:'🏪 김치마트 헐리우드'},
+  gal_kimchi:{en:'🥬 Korean Kimchi & Banchan',es:'🥬 Kimchi y Banchan Coreano',ko:'🥬 한국 김치·반찬'},
+  gal_produce:{en:'🍎 Fresh Produce',es:'🍎 Verduras Frescas',ko:'🍎 신선 야채·과일'},
+  gal_meat:{en:'🥩 Fresh Meat & More',es:'🥩 Carnes Frescas y Más',ko:'🥩 신선 정육 외'},
+  gal_aisle:{en:'🛒 Spacious & Clean Aisles',es:'🛒 Pasillos Amplios y Limpios',ko:'🛒 넓고 깨끗한 매장'},
+  gal_more:{en:'📷 See more photos on Google',es:'📷 Ver más fotos en Google',ko:'📷 구글에서 사진 더 보기'},
+  rev_h:{en:'What Our Customers Say',es:'Lo Que Dicen Nuestros Clientes',ko:'고객 후기'},
+  rev_sub:{en:'Rated 4.8 ★ by 1,713 customers on Google',es:'Calificado 4.8 ★ por 1,713 clientes en Google',ko:'구글 고객 1,713명이 매긴 4.8 ★'},
+  rev_btn:{en:'⭐ Read Google Reviews',es:'⭐ Leer Reseñas de Google',ko:'⭐ 구글 리뷰 보기'},
+
+  hero_title:{en:'Kimchi Mart Hollywood',es:'Kimchi Mart Hollywood',ko:'김치마트 헐리우드'},
+  hero_tag:{en:'Your Trusted Korean & Asian Grocery',es:'Tu Supermercado Coreano y Asiático de Confianza',ko:'믿을 수 있는 한국·아시아 식료품점'},
+  badge_safe:{en:'✅ Safe',es:'✅ Seguro',ko:'✅ 안전'},
+  badge_clean:{en:'✨ Clean',es:'✨ Limpio',ko:'✨ 청결'},
+  badge_fresh:{en:'🥬 Fresh',es:'🥬 Fresco',ko:'🥬 신선'},
+  badge_trusted:{en:'🤝 Trusted',es:'🤝 Confiable',ko:'🤝 신뢰'},
+  greviews:{en:'1,713 Google reviews',es:'1,713 reseñas de Google',ko:'구글 리뷰 1,713개'},
+  cta_directions:{en:'📍 Get Directions',es:'📍 Cómo Llegar',ko:'📍 오시는 길'},
+  cta_call:{en:'☎ (754) 210-7965',es:'☎ (754) 210-7965',ko:'☎ (754) 210-7965'},
+
+  about_h:{en:'Welcome to Kimchi Mart',es:'Bienvenido a Kimchi Mart',ko:'김치마트에 오신 것을 환영합니다'},
+  about_sub:{en:'Hollywood, Florida',es:'Hollywood, Florida',ko:'플로리다 헐리우드'},
+  ic_addr:{en:'Address',es:'Dirección',ko:'주소'},
+  ic_phone:{en:'Phone',es:'Teléfono',ko:'전화'},
+  ic_parking:{en:'Free Parking',es:'Estacionamiento Gratis',ko:'무료 주차'},
+  ic_parking_d:{en:'Plenty of free parking available',es:'Amplio estacionamiento gratuito',ko:'넉넉한 무료 주차 공간'},
+  ic_snap:{en:'SNAP / EBT',es:'SNAP / EBT',ko:'SNAP / EBT'},
+  ic_snap_d:{en:'EBT cards accepted',es:'Aceptamos EBT',ko:'EBT 카드 사용 가능'},
+
+  hours_h:{en:'Store Hours',es:'Horario',ko:'영업시간'},
+  hours_sub:{en:'Open 7 days a week · 8 AM – 10 PM',es:'Abierto los 7 días · 8 AM – 10 PM',ko:'연중무휴 · 오전 8시 – 오후 10시'},
+  mon:{en:'Monday',es:'Lunes',ko:'월요일'},
+  tue:{en:'Tuesday',es:'Martes',ko:'화요일'},
+  wed:{en:'Wednesday',es:'Miércoles',ko:'수요일'},
+  thu:{en:'Thursday',es:'Jueves',ko:'목요일'},
+  fri:{en:'Friday',es:'Viernes',ko:'금요일'},
+  sat:{en:'Saturday',es:'Sábado',ko:'토요일'},
+  sun:{en:'Sunday',es:'Domingo',ko:'일요일'},
+
+  depts_h:{en:'What We Offer',es:'Lo Que Ofrecemos',ko:'매장 안내'},
+  depts_sub:{en:'Everything for your Korean & Asian kitchen',es:'Todo para tu cocina coreana y asiática',ko:'한국·아시아 요리를 위한 모든 것'},
+  d_produce:{en:'Fresh Produce',es:'Verduras Frescas',ko:'신선 야채'},
+  d_produce_d:{en:'Vegetables & fruits',es:'Verduras y frutas',ko:'채소·과일'},
+  d_meat:{en:'Meat',es:'Carnes',ko:'정육'},
+  d_meat_d:{en:'BBQ cuts & more',es:'Cortes para BBQ y más',ko:'BBQ 부위 외'},
+  d_seafood:{en:'Seafood',es:'Mariscos',ko:'해산물'},
+  d_seafood_d:{en:'Fresh & frozen',es:'Fresco y congelado',ko:'신선·냉동'},
+  d_banchan:{en:'Banchan',es:'Banchan',ko:'반찬'},
+  d_banchan_d:{en:'Korean side dishes',es:'Guarniciones coreanas',ko:'한국 반찬'},
+  d_noodle:{en:'Ramen & Noodles',es:'Ramen y Fideos',ko:'라면·면류'},
+  d_noodle_d:{en:'All your favorites',es:'Todos tus favoritos',ko:'다양한 면 종류'},
+  d_kfood:{en:'K-Food',es:'Comida Coreana',ko:'K-푸드'},
+  d_kfood_d:{en:'Snacks & frozen meals',es:'Snacks y comidas congeladas',ko:'과자·냉동식품'},
+  d_sauce:{en:'Sauces & Pastes',es:'Salsas y Pastas',ko:'소스·장류'},
+  d_sauce_d:{en:'Gochujang, soy & more',es:'Gochujang, soja y más',ko:'고추장·간장 외'},
+  d_drinks:{en:'Drinks & Tea',es:'Bebidas y Té',ko:'음료·차'},
+  d_drinks_d:{en:'Beverages',es:'Bebidas',ko:'각종 음료'},
+  d_sushi:{en:'Sushi Bar',es:'Barra de Sushi',ko:'스시 바'},
+  d_sushi_d:{en:'Fresh made daily',es:'Hecho fresco a diario',ko:'매일 신선하게'},
+  d_boba:{en:'Boba Tea',es:'Té Boba',ko:'버블티'},
+  d_boba_d:{en:'Bubble tea counter',es:'Barra de té de burbujas',ko:'버블티 코너'},
+  d_bakery:{en:'Bakery',es:'Panadería',ko:'베이커리'},
+  d_bakery_d:{en:'Fresh baked goods',es:'Pan recién horneado',ko:'갓 구운 빵'},
+
+  visit_h:{en:'Visit Us',es:'Visítanos',ko:'오시는 길'},
+  visit_sub:{en:"We can't wait to see you!",es:'¡Te esperamos!',ko:'기다리고 있겠습니다!'},
+  map_title:{en:'Kimchi Mart Hollywood',es:'Kimchi Mart Hollywood',ko:'김치마트 헐리우드'},
+  map_open:{en:'🧭 Get Directions',es:'🧭 Cómo Llegar',ko:'🧭 길찾기'},
+
+  foot_name:{en:'Kimchi Mart Hollywood',es:'Kimchi Mart Hollywood',ko:'김치마트 헐리우드'},
+  foot_slogan:{en:'Safe · Clean · Fresh · Trusted Asian Food',es:'Comida Asiática Segura · Limpia · Fresca · Confiable',ko:'안전 · 청결 · 신선 · 믿을 수 있는 아시아 식품'},
+  foot_follow:{en:'Follow us for deals & K-food fun!',es:'¡Síguenos para ofertas y comida coreana!',ko:'세일·K푸드 소식, 팔로우하세요!'},
+};
+
+let LANG = localStorage.getItem('km_site_lang') || 'en';
+function setLang(l){
+  LANG = l;
+  localStorage.setItem('km_site_lang', l);
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k = el.dataset.t;
+    if (T[k] && T[k][l]) el.textContent = T[k][l];
+  });
+  ['en','es','ko'].forEach(x=>{
+    const b=document.getElementById('lng-'+x);
+    if(b) b.classList.toggle('on', x===l);
+  });
+}
+
+// 오늘 요일 강조
+(function(){
+  const today = new Date().getDay(); // 0=일
+  const row = document.querySelector(`#hoursTable .row[data-day="${today}"]`);
+  if (row) row.classList.add('today');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  setLang(LANG);
+})();
+</script>
+
+</body>
+</html>
