@@ -186,6 +186,37 @@
   footer .copy{font-size:.82em;opacity:.7;margin-top:10px}
 
   .edit-note{background:#fffbeb;border:1px dashed var(--gold);border-radius:6px;color:#92400e;font-weight:600;font-size:.85em;padding:1px 7px;display:inline-block}
+
+  /* ============ VIDEOS (YouTube) ============ */
+  .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .vid-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);border:1px solid #f0ede3;cursor:pointer;transition:transform .15s}
+  .vid-card:hover{transform:translateY(-3px)}
+  .vid-thumb{position:relative;aspect-ratio:16/9;background:#000}
+  .vid-thumb img{width:100%;height:100%;object-fit:cover}
+  .vid-thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.6em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .vid-card .vt{padding:11px 13px;font-weight:700;font-size:.88em;color:var(--ink);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .vid-embed{grid-column:1/-1;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000}
+  .vid-embed iframe{width:100%;height:100%;border:0}
+  .vid-fallback{text-align:center;color:#9ca3af;padding:20px}
+
+  /* ============ STORE NEWS (featured posts) ============ */
+  .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .news-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);border:1px solid #f0ede3;display:block;transition:transform .15s}
+  .news-card:hover{transform:translateY(-3px)}
+  .news-card .nimg{aspect-ratio:1/1;object-fit:cover;width:100%}
+  .news-card .nph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:3em;background:linear-gradient(135deg,#fde68a,#fff7ed)}
+  .news-card .ncap{padding:12px 14px;font-size:.9em;color:#374151;line-height:1.4}
+  .news-card .ncap .lnk{color:var(--green);font-weight:700;display:block;margin-top:6px}
+
+  /* ============ SHARE & EARN ============ */
+  .share-band{background:linear-gradient(135deg,#fff7ed,#fef9c3);border:1px solid #fde68a;border-radius:22px;padding:34px 26px;text-align:center;box-shadow:0 8px 28px rgba(245,179,1,.12)}
+  .share-band .bic{font-size:2.6em}
+  .share-band h3{font-size:1.6em;font-weight:900;color:var(--green-d);margin-top:4px}
+  .share-pts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+  .share-pts .pt{background:#fff;border:1px solid #f0ede3;border-radius:14px;padding:12px 16px;min-width:94px;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+  .share-pts .pt .e{font-size:1.6em}
+  .share-pts .pt .v{font-weight:900;color:var(--green);font-size:1.05em;margin-top:2px}
+  .share-pts .pt .l{font-size:.76em;color:#6b7280;margin-top:1px}
 </style>
 </head>
 <body>
@@ -201,6 +232,7 @@
       <a href="#depts" data-t="nav_depts">Departments</a>
       <a href="#products" data-t="nav_products">Deals</a>
       <a href="#gallery" data-t="nav_gallery">Gallery</a>
+      <a href="#videos" data-t="nav_videos">Videos</a>
       <a href="#rewards" data-t="nav_rewards">Rewards</a>
       <a href="#visit" data-t="nav_visit">Visit</a>
     </nav>
@@ -413,6 +445,36 @@
   </div>
 </section>
 
+<!-- ============ LATEST VIDEOS (YouTube) ============ -->
+<section id="videos" style="background:linear-gradient(180deg,#fdfbf5,#fff)">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">🎬</div>
+      <h2 data-t="vid_h">Latest Videos</h2>
+      <p data-t="vid_sub">Watch what's fresh at Kimchi Mart</p>
+    </div>
+    <div id="vidWrap"><div class="vid-fallback" data-t="vid_loading">Loading videos…</div></div>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn btn-gold" href="https://youtube.com/@kimchimarttv" target="_blank" rel="noopener" data-t="vid_btn">▶ Subscribe on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORE NEWS (featured posts — hidden if empty) ============ -->
+<section id="news" style="background:#fff;display:none">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="ic">📰</div>
+      <h2 data-t="news_h">Store News</h2>
+      <p data-t="news_sub">Latest from our Instagram</p>
+    </div>
+    <div class="news-grid" id="newsGrid"></div>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn btn-gold" href="https://instagram.com/kimchimartmiami" target="_blank" rel="noopener" data-t="news_btn">📷 Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ MEMBERSHIP / REWARDS APP ============ -->
 <section id="rewards">
   <div class="wrap">
@@ -450,6 +512,25 @@
         <a class="btn btn-gold" style="margin-top:12px;padding:10px 20px;font-size:.9em" href="https://specialmasterdj-sketch.github.io/kimchi-rewards/login.html" target="_blank" rel="noopener" data-t="rw_join">Join Now →</a>
         <div class="members" data-t="rw_members">🎉 Join 57,000+ members</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHARE & EARN POINTS ============ -->
+<section id="share">
+  <div class="wrap">
+    <div class="share-band">
+      <div class="bic">📣</div>
+      <h3 data-t="sh_h">Share & Earn Points</h3>
+      <p style="color:#92400e;font-weight:600;margin-top:6px" data-t="sh_sub">Post your Kimchi Mart moments — get bonus points!</p>
+      <div class="share-pts">
+        <div class="pt"><div class="e">📸</div><div class="v">+100</div><div class="l" data-t="sh_photo">Photo</div></div>
+        <div class="pt"><div class="e">📝</div><div class="v">+200</div><div class="l" data-t="sh_post">Post</div></div>
+        <div class="pt"><div class="e">🎬</div><div class="v">+300</div><div class="l" data-t="sh_video">Video</div></div>
+        <div class="pt"><div class="e">⭐</div><div class="v">+200</div><div class="l" data-t="sh_review">Review</div></div>
+      </div>
+      <a class="btn btn-gold" href="https://specialmasterdj-sketch.github.io/kimchi-rewards/share.html" target="_blank" rel="noopener" data-t="sh_btn">📣 Share & Earn</a>
+      <p style="margin-top:12px;font-size:.82em;color:#92400e;font-weight:600" data-t="sh_note">Tag #KimchiMart @kimchimart · members only · reviewed before points</p>
     </div>
   </div>
 </section>
@@ -511,7 +592,28 @@ const T = {
   nav_hours:{en:'Hours',es:'Horario',ko:'영업시간'},
   nav_depts:{en:'Departments',es:'Secciones',ko:'매장 안내'},
   nav_gallery:{en:'Gallery',es:'Galería',ko:'매장 사진'},
+  nav_videos:{en:'Videos',es:'Videos',ko:'영상'},
   nav_rewards:{en:'Rewards',es:'Recompensas',ko:'멤버십'},
+
+  vid_h:{en:'Latest Videos',es:'Videos Recientes',ko:'최신 영상'},
+  vid_sub:{en:"Watch what's fresh at Kimchi Mart",es:'Mira lo nuevo en Kimchi Mart',ko:'김치마트의 새로운 영상을 만나보세요'},
+  vid_loading:{en:'Loading videos…',es:'Cargando videos…',ko:'영상 불러오는 중…'},
+  vid_btn:{en:'▶ Subscribe on YouTube',es:'▶ Suscríbete en YouTube',ko:'▶ 유튜브 구독하기'},
+  vid_soon:{en:'Videos coming soon — subscribe to catch them first!',es:'Pronto habrá videos — ¡suscríbete!',ko:'곧 영상이 올라옵니다 — 먼저 구독해두세요!'},
+
+  news_h:{en:'Store News',es:'Novedades',ko:'매장 소식'},
+  news_sub:{en:'Latest from our Instagram',es:'Lo último de nuestro Instagram',ko:'인스타그램 최신 소식'},
+  news_btn:{en:'📷 Follow on Instagram',es:'📷 Síguenos en Instagram',ko:'📷 인스타그램 팔로우'},
+  news_view:{en:'View on Instagram →',es:'Ver en Instagram →',ko:'인스타에서 보기 →'},
+
+  sh_h:{en:'Share & Earn Points',es:'Comparte y Gana Puntos',ko:'공유하고 포인트 받기'},
+  sh_sub:{en:'Post your Kimchi Mart moments — get bonus points!',es:'¡Publica tus momentos en Kimchi Mart y gana puntos!',ko:'김치마트에서의 순간을 올리고 보너스 포인트를 받으세요!'},
+  sh_photo:{en:'Photo',es:'Foto',ko:'사진'},
+  sh_post:{en:'Post',es:'Publicación',ko:'게시물'},
+  sh_video:{en:'Video',es:'Video',ko:'영상'},
+  sh_review:{en:'Review',es:'Reseña',ko:'리뷰'},
+  sh_btn:{en:'📣 Share & Earn',es:'📣 Comparte y Gana',ko:'📣 공유하고 적립'},
+  sh_note:{en:'Tag #KimchiMart @kimchimart · members only · reviewed before points',es:'Etiqueta #KimchiMart @kimchimart · solo miembros · revisado antes de los puntos',ko:'#KimchiMart @kimchimart 태그 · 회원 전용 · 승인 후 적립'},
   nav_visit:{en:'Visit',es:'Visítanos',ko:'오시는 길'},
 
   rw_h:{en:'Kimchi Mart Rewards',es:'Recompensas Kimchi Mart',ko:'김치마트 멤버십'},
@@ -629,6 +731,55 @@ const T = {
 
 // 🔒 가격 자물쇠 클릭 → 리워드 앱 가입 화면 (회원만 가격 공개)
 function goJoin(){ window.open('https://specialmasterdj-sketch.github.io/kimchi-rewards/login.html','_blank','noopener'); }
+
+function escH(s){ return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function tt(k){ const v=T[k]||{}; return v[LANG]||v.en||k; }
+
+// ============ 최신 영상 (YouTube Data API v3 — 멤버십 앱과 동일 키) ============
+const YT_API_KEY = 'AIzaSyA-D08FMH-5IXp24ny8F4rQN2can9RStc0';
+const YT_UPLOADS = 'UU6PTaXKmzkWzKPI--eNSvyA';   // @kimchimarttv uploads playlist
+const VIDEO_COUNT = 8;
+async function loadVideos(){
+  const wrap = document.getElementById('vidWrap');
+  try {
+    const r = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${VIDEO_COUNT}&playlistId=${YT_UPLOADS}&key=${YT_API_KEY}`);
+    const d = await r.json();
+    const vids = ((d&&d.items)||[]).map(it=>{
+      const s=it.snippet||{}, th=s.thumbnails||{};
+      return { id:s.resourceId&&s.resourceId.videoId, title:s.title||'', thumb:(th.medium||th.high||th.default||{}).url||'' };
+    }).filter(v=>v.id && !/private|deleted/i.test(v.title));
+    if (!vids.length){ wrap.innerHTML = `<div class="vid-fallback">${escH(tt('vid_soon'))}</div>`; return; }
+    wrap.innerHTML = `<div class="vid-grid">${vids.map(v=>`
+      <div class="vid-card" data-id="${escH(v.id)}">
+        <div class="vid-thumb"><img src="${escH(v.thumb)}" alt="" loading="lazy"><div class="play">▶</div></div>
+        <div class="vt">${escH(v.title)}</div>
+      </div>`).join('')}</div>`;
+    wrap.querySelectorAll('.vid-card').forEach(card=>card.addEventListener('click',()=>{
+      const w=document.createElement('div'); w.className='vid-embed';
+      w.innerHTML=`<iframe src="https://www.youtube.com/embed/${encodeURIComponent(card.dataset.id)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      card.replaceWith(w);
+    }));
+  } catch(e){ wrap.innerHTML = `<div class="vid-fallback">${escH(tt('vid_soon'))}</div>`; }
+}
+loadVideos();
+
+// ============ 매장 소식 (관리자 추천 게시물 rewards/featured — 비면 섹션 숨김) ============
+const FB_DB = 'https://kimchi-mart-order-default-rtdb.firebaseio.com';
+async function loadNews(){
+  try {
+    const r = await fetch(`${FB_DB}/rewards/featured.json?cache=${Date.now()}`, { cache:'no-store' });
+    const d = (r.ok?(await r.json()):null) || {};
+    const arr = Object.values(d).filter(x=>x&&x.link).sort((a,b)=>(b.ts||0)-(a.ts||0)).slice(0,8);
+    if (!arr.length) return;
+    document.getElementById('newsGrid').innerHTML = arr.map(it=>`
+      <a class="news-card" href="${escH(it.link)}" target="_blank" rel="noopener">
+        ${it.image ? `<img class="nimg" src="${escH(it.image)}" alt="" loading="lazy">` : `<div class="nph">📷</div>`}
+        <div class="ncap">${escH(it.caption||'')}<span class="lnk" data-news-lnk>${escH(tt('news_view'))}</span></div>
+      </a>`).join('');
+    document.getElementById('news').style.display = '';
+  } catch(_){}
+}
+loadNews();
 
 let LANG = localStorage.getItem('km_site_lang') || 'en';
 function setLang(l){
